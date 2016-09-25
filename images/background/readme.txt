@@ -1,0 +1,1 @@
+这里用于存放背景图，图片名称为 backgroundX.jpg，一共 8 张，其中 X 表示正整数，若要增减请自行修改 functions.php 第 402 行 mt_rand(1, 8)
