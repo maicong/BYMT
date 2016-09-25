@@ -1,5 +1,5 @@
 # BYMT
-WordPress 主题 BYMT 开源啦，感谢大家长久一来的支持。
+WordPress 主题 BYMT 开源啦，感谢大家长久以来的支持。
 
 ## 点击分支查看版本
 
