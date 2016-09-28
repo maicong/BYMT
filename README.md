@@ -4,6 +4,8 @@
 
 ## 写在前面
 
+发布页： https://maicong.me/t/85
+
 Hello everybody~
 
 我是麦田一根葱，你可以叫我一根葱，也可以叫我麦葱酱~
