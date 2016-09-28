@@ -1,0 +1,19 @@
+/**
+ *
+ * @package     BYMT
+ * @author      MaiCong (i@maicong.me)
+ * @link        https://maicong.me/t/119
+ * @version     2.1.2
+ */
+
+#header-inner, #main-nav, #mobile-nav, #nav-menu li ul, .vote_ok, #topbar, #content-list, #content-main, #picturewall, #footerlink, #footer, .widget, .pagination a, .pagination span{border:1px #ddd solid;}
+#mobile-nav{margin-top:-1px;}
+#header-inner{border-bottom:none;}
+#main-nav{border-top:none; width:auto;}
+#nav-search:after, #nav-search:before{display:none;}
+#nav-search input[type="submit"]{padding-top: 6px; height:28px;}
+#search-input{background: #fff url(../images/ie7/search.png) left center no-repeat; border:1px solid #ccc;}
+#content-list, #content-main{margin:0px;}
+ul.readers-list{margin-bottom:10px;}
+ul.readers-list li{float:left; margin:5px 0;}
+.widget .searchform #searchsubmit, #widget_user .login_btn{height:24px;}

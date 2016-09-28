@@ -1,10 +1,71 @@
-# BYMT
-WordPress 主题 BYMT 开源啦，感谢大家长久以来的支持。
+# 当前更新版本：2.1.2
 
-## 点击分支查看版本
+> WordPress 主题 BYMT v2
 
-[BYMT v1](https://github.com/maicong/BYMT/tree/v1)
+## 说明
 
-[BYMT v2](https://github.com/maicong/BYMT/tree/v2)
+本次更新了很多很多东西！ 简单来说，2.0 是 1.0 的重构版。
 
-[BYMT v3](https://github.com/maicong/BYMT/tree/v3)
+文档： http://wiki.yuxiaoxi.com
+
+发布页： https://maicong.me/t/119
+
+## 安装
+
+请前往： http://wiki.yuxiaoxi.com/install
+
+有问题可以 issues
+
+## 功能
+
+· 新增公告顶踩
+
+· 新增 ajax 搜索、ajax 翻页
+
+· 新增焦点图
+
+· 新增代码高亮
+
+· 新增百度喜欢
+
+· 新增数据元标记
+
+· 优化文章样式和功能
+
+· 优化评论样式和功能
+
+· 优化自适应
+
+· 优化侧边栏
+
+· 优化短代码
+
+· 优化广告
+
+· 优化标签
+
+· 优化页码
+
+· 优化导航
+
+· 优化图片墙(瀑布流)
+
+· 优化后台设置
+
+· 优化 js
+
+· 优化 css
+
+· 去除 page-tv.php
+
+· 去除随机背景
+
+· 去除图片图标，改用 iconfont
+
+· 修复上个版本存在的 bug
+
+· 还有其他一些地方优化了，我就不列举了
+
+## 协议
+
+MIT

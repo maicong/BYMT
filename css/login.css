@@ -1,0 +1,69 @@
+﻿/**
+ *
+ * @package     BYMT
+ * @author      MaiCong (i@maicong.me)
+ * @link        https://maicong.me/t/119
+ * @version     2.1.2
+ */
+
+body {
+    background-color: #666;
+    background-image: -o-linear-gradient(center bottom, color-stop(0, #666)21%, color-stop(1, #999)47%)
+}
+body.login {
+    background: url(../images/login-bg.jpg) no-repeat top center;
+    filter: alpha(opacity=80)
+}
+#login {
+    position: relative;
+    z-index: 2
+}
+#login form {
+    background: #69C;
+    padding-top: 20px;
+    margin-top: 0;
+    border-radius: 8px;
+    border: 1px solid#003333;
+    -o-box-shadow: 8px 8px 18px#122222;
+    box-shadow: 8px 8px 18px#122222;
+    transition: all.5s linear
+}
+#login form:hover,
+#login form:active {
+    background: #474747;
+    border: 1px solid#aaa;
+    -o-box-shadow: 0 0 28px 15px#ddd;
+    box-shadow: 0 0 28px 15px#ddd
+}
+#login h1 {
+    margin: 0;
+    display: none
+}
+.login#nav a,
+.login#backtoblog a {
+    color: #222!important;
+    text-shadow: 0 1px 0#bbb;
+    -moz-text-shadow: 0 1px 0#bbb;
+    -webkit-text-shadow: 0 1px 0#bbb;
+    -khtml-text-shadow: 0 1px 0#bbb
+}
+.login#nav a:hover,
+.login#backtoblog a:hover {
+    color: #000!important
+}
+label {
+    color: #fff!important;
+    -moz-text-shadow: 0 1px 0#000;
+    -webkit-text-shadow: 0 1px 0#000;
+    -khtml-text-shadow: 0 1px 0#000
+}
+span.byauthor {
+    color: #ccc;
+    position: absolute;
+    right: 10px;
+    text-decoration: none;
+    top: 7px
+}
+span.byauthor a {
+    position: static!important
+}

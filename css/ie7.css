@@ -1,0 +1,31 @@
+/**
+ *
+ * @package     BYMT
+ * @author      MaiCong (i@maicong.me)
+ * @link        https://maicong.me/t/119
+ * @version     2.1.2
+ */
+
+#header-inner, #main-nav, #mobile-nav, #nav-menu li ul, .vote_ok, #topbar, #content-list, #content-main, #picturewall, #footerlink, #footer, .widget, .pagination a, .pagination span{border:1px #ddd solid;}
+#mobile-nav{margin-top:-1px;}
+#header-inner{border-bottom:none;}
+#main-nav{border-top:none; width:auto;}
+#nav-search input[type="submit"]{padding-top: 4px; height:28px;}
+#search-input{background:#fff url(../images/ie7/search.png) left center no-repeat; border:1px solid #ccc;}
+.vote_up{background:url(../images/ie7/vote-ding.png) left center no-repeat; padding-left:18px;}
+.vote_down{background:url(../images/ie7/vote-cai.png) left 1px no-repeat;padding-left:18px;}
+#content-list, #content-main{margin:0px;}
+#content-list .post-list:hover{border:none;border-bottom: 1px #EAEAEA solid;margin:0;}
+.pauthor,.ptime,.pcate,.pcomm,.pview{background:url(../images/ie7/meta-sprite.png) left center no-repeat;padding-left:18px;}
+.pauthor{background-position:-1px -16px}
+.ptime{background-position:1px -46px}
+.pcate{background-position:1px -63px}
+.pcomm{background-position:1px -1px}
+.pview{background-position:1px -32px}
+.tags, .post-tags{background:url(../images/ie7/tags.png) left center no-repeat;padding-left:18px;}
+.icon-stop{background:url(../images/ie7/f_c.png) center center no-repeat; width:13px; height:13px;display:block;}
+.icon-pause{background:url(../images/ie7/f_o.png) center center no-repeat;width:13px; height:13px;display:block;}
+#comment-tools{display:none;}
+ul.readers-list{margin-bottom:10px;}
+ul.readers-list li{float:left; margin:5px 0;}
+.widget .searchform #searchsubmit, #widget_user .login_btn{height:24px; vertical-align:-2px;}
