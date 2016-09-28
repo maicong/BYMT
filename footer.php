@@ -4,7 +4,7 @@
  * @package     BYMT
  * @author      MaiCong (i@maicong.me)
  * @link        https://maicong.me/t/85
- * @version     1.0.4
+ * @version     1.0.5
  */
 ?>
 <?php if(bymt_option('custom_footerlink')): ?>
@@ -17,7 +17,7 @@
 <?php endif; ?>
 <div id="footer" class="container">
         <div class="copyright"><?php if(stripslashes(bymt_option('footer'))) : ?><?php echo stripslashes(bymt_option('footer'));?><?php else : ?>&copy; 2012-2013 <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a> All Rights Reserved<?php endif; ?> <?php if(bymt_option('icp_ck')): ?><a href="http://www.miitbeian.gov.cn" target="_blank"><?php echo stripslashes(bymt_option('icp')); ?></a><?php endif; ?></div>
-		<div class="themeauthor">Powered by <a href="http://wordpress.org/" target="_blank"><strong>WordPress</strong></a> Theme by <a href="https://maicong.me/t/85" target="_blank" title="麦田一根葱"><strong>BYMT</strong></a></div>
+		<div class="themeauthor">Powered by <a href="http://wordpress.org/" target="_blank"><strong>WordPress</strong></a> Theme by <a href="https://github.com/maicong/BYMT/tree/v1" target="_blank" title="麦田一根葱"><strong>BYMT v1</strong></a></div>
 		 <div style="display:none"><?php if(bymt_option('statistics')) : ?><?php echo bymt_option('statisticscode'); ?><?php endif; ?> </div>
 </div>
 <?php if(bymt_option('custom_circle')): ?>

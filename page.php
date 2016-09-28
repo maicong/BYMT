@@ -4,7 +4,7 @@
  * @package     BYMT
  * @author      MaiCong (i@maicong.me)
  * @link        https://maicong.me/t/85
- * @version     1.0.4
+ * @version     1.0.5
  */
 
 get_header();

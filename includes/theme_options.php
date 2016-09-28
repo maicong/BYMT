@@ -4,7 +4,7 @@
  * @package 	BYMT
  * @author 		MaiCong (i@maicong.me)
  * @link 		https://maicong.me/t/85
- * @version 	1.0.4
+ * @version 	1.0.5
  */
 
 add_action('admin_menu', 'bymt_admin_menu');
@@ -72,7 +72,7 @@ jQuery(document).ready(function($){
 <div class="wrap">
 	<div id="icon-options-general" class="icon32"><br></div><h2>主题设置</h2><br>
 	<div id="bymt_admin_ie_warning" class="bymt_nodisplay updated fade"><p><strong> <?php _e('建议: 为了获得更好的体验，请不要使用IE浏览器.','bymt') ?><span id="bymt_admin_ie_warning_disable">Close [X]</span></strong></p></div>
-	<div class="ads">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>当前主题：<a href="https://maicong.me/t/85" target="_blank">BYMT</a> | 制作：<a href="https://maicong.me/" target="_blank">麦田一根葱</a></b></div>
+	<div class="ads">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前主题：<a href="https://github.com/maicong/BYMT/tree/v1" target="_blank">BYMT v1</a> | 当前版本：<a href="https://github.com/maicong/BYMT/releases/tag/v<?php echo THEMEVER; ?>" target="_blank"><?php echo THEMEVER; ?></a> | 最后更新：<a><?php echo THEMEUPDATE; ?></a> | 主题作者：<a href="https://maicong.me/" target="_blank">麦田一根葱</a></div>
 		<form method="post" action="options.php">
 		<?php settings_fields( 'bymt-settings-group' ); ?>
 		<div id="bymt_nav_list">

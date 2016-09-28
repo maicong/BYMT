@@ -4,7 +4,7 @@
  * @package 	BYMT
  * @author 		MaiCong (i@maicong.me)
  * @link 		https://maicong.me/t/85
- * @version 	1.0.4
+ * @version 	1.0.5
  */
 ?>
 <h1>你或许会对这些文章感兴趣</h1>
