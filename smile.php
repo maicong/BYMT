@@ -7,7 +7,7 @@
  * @version     1.0.4
  */
 
-function wp_smilies() {
+function global_wpsmiliestrans() {
 	$wpsmiliestrans = array(
 		':mrgreen:' => 'icon_mrgreen.gif',
 		':neutral:' => 'icon_neutral.gif',
@@ -53,6 +53,12 @@ function wp_smilies() {
 		      ':!:' => 'icon_exclaim.gif',
 		      ':?:' => 'icon_question.gif',
 	);
+	$GLOBALS['wpsmiliestrans'] = $wpsmiliestrans;
+}
+add_action('init', 'global_wpsmiliestrans');
+
+function wp_smilies() {
+	global $wpsmiliestrans;
 	if ( !get_option('use_smilies') or (empty($wpsmiliestrans))) return;
 	$smilies = array_unique($wpsmiliestrans);
 	$link='';
