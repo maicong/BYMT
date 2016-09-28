@@ -88,7 +88,7 @@ function bymt_widget0_init() {
         $widget_ops = array('description' => '本主题自带的最新评论小工具');
         parent::__construct('bymt-widget1', 'BYMT-最新评论', $widget_ops);
     }
-    function widget($args, $instance) {
+    public function widget($args, $instance) {
         extract($args);
 		global $wpdb;
         $rcnum = strip_tags($instance['rcnum']);
@@ -148,7 +148,7 @@ function bymt_widget0_init() {
         echo '</div>';
     }
 
-    function update($new_instance, $old_instance) {
+    public function update($new_instance, $old_instance) {
         if (!isset($new_instance['submit'])) {
             return false;
         }
@@ -157,7 +157,7 @@ function bymt_widget0_init() {
 		$instance['rctitle'] = strip_tags($new_instance['rctitle']);
         return $instance;
     }
-    function form($instance) {
+    public function form($instance) {
         global $wpdb;
         $instance = wp_parse_args((array) $instance, array('rcnum' => '10','rctitle' => '最新评论'));
         $rcnum = strip_tags($instance['rcnum']);
@@ -181,7 +181,7 @@ class bymt_widget2 extends WP_Widget {
         $widget_ops = array('description' => '本主题自带的评论排行榜小工具');
         parent::__construct('bymt-widget2', 'BYMT-评论排行榜', $widget_ops);
     }
-    function widget($args, $instance) {
+    public function widget($args, $instance) {
         extract($args);
 		global $wpdb;
         $tcnum = strip_tags($instance['tcnum']);
@@ -227,7 +227,7 @@ echo $mostactive;
         echo '</div>';
     }
 
-    function update($new_instance, $old_instance) {
+    public function update($new_instance, $old_instance) {
         if (!isset($new_instance['submit'])) {
             return false;
         }
@@ -236,7 +236,7 @@ echo $mostactive;
 		$instance['tctitle'] = strip_tags($new_instance['tctitle']);
         return $instance;
     }
-    function form($instance) {
+    public function form($instance) {
         global $wpdb;
         $instance = wp_parse_args((array) $instance, array('tcnum' => '15','tctitle' => '大神排行榜'));
         $tcnum = strip_tags($instance['tcnum']);
@@ -260,7 +260,7 @@ class bymt_widget3 extends WP_Widget {
         $widget_ops = array('description' => '本主题自带的站点统计小工具');
         parent::__construct('bymt-widget3', 'BYMT-站点统计', $widget_ops);
     }
-    function widget($args, $instance) {
+    public function widget($args, $instance) {
         extract($args);
 		global $wpdb;
         $builddate = strip_tags($instance['builddate']);
@@ -281,7 +281,7 @@ class bymt_widget3 extends WP_Widget {
         echo '</div>';
     }
 
-    function update($new_instance, $old_instance) {
+    public function update($new_instance, $old_instance) {
         if (!isset($new_instance['submit'])) {
             return false;
         }
@@ -290,7 +290,7 @@ class bymt_widget3 extends WP_Widget {
 		$instance['sttitle'] = strip_tags($new_instance['sttitle']);
         return $instance;
     }
-    function form($instance) {
+    public function form($instance) {
         global $wpdb;
         $instance = wp_parse_args((array) $instance, array('builddate' => '2013-01-01','sttitle' => '站点统计'));
         $builddate = strip_tags($instance['builddate']);
@@ -314,7 +314,7 @@ class bymt_widget4 extends WP_Widget {
         $widget_ops = array('description' => '主题自带的用户登录小工具');
         parent::__construct('bymt-widget4', 'BYMT-用户登录', $widget_ops);
     }
-    function widget($args, $instance) {
+    public function widget($args, $instance) {
         extract($args);
 ?>
 <div class="widget" id="widget_user">
@@ -368,7 +368,7 @@ echo get_avatar($user_email, 64);
 </div>
 <?php
     }
-    function form($instance) {
+    public function form($instance) {
         global $wpdb;
 ?>
     <p>此工具无需设置</p>
@@ -386,7 +386,7 @@ class bymt_widget5 extends WP_Widget {
         $widget_ops = array('description' => '主题自带的侧边栏广告小工具 尺寸250*250');
         parent::__construct('bymt-widget5', 'BYMT-侧边栏广告一', $widget_ops);
     }
-    function widget($args, $instance) {
+    public function widget($args, $instance) {
         extract($args);
 ?>
 <?php if(bymt_option('sidebarad250')): ?>
@@ -402,7 +402,7 @@ class bymt_widget5 extends WP_Widget {
 <?php
     }
 
-    function form($instance) {
+    public function form($instance) {
         global $wpdb;
 ?>
      <p>请在主题设置 &raquo; 广告设置 中进行设置</p>
@@ -420,7 +420,7 @@ class bymt_widget6 extends WP_Widget {
         $widget_ops = array('description' => '主题自带的侧边栏广告小工具 尺寸120*90*2');
         parent::__construct('bymt-widget6', 'BYMT-侧边栏广告二', $widget_ops);
     }
-    function widget($args, $instance) {
+    public function widget($args, $instance) {
         extract($args);
 ?>
 <?php if(bymt_option('sidebarad120')): ?>
@@ -442,7 +442,7 @@ class bymt_widget6 extends WP_Widget {
 <?php
     }
 
-    function form($instance) {
+    public function form($instance) {
         global $wpdb;
 ?>
      <p>请在主题设置 &raquo; 广告设置 中进行设置</p>
@@ -460,7 +460,7 @@ class bymt_widget7 extends WP_Widget {
         $widget_ops = array('description' => '主题自带的侧边栏广告小工具 尺寸250*60');
         parent::__construct('bymt-widget7', 'BYMT-侧边栏广告三', $widget_ops);
     }
-    function widget($args, $instance) {
+    public function widget($args, $instance) {
         extract($args);
 ?>
 <?php if(bymt_option('sidebarad25060')): ?>
@@ -475,7 +475,7 @@ class bymt_widget7 extends WP_Widget {
 <?php
     }
 
-    function form($instance) {
+    public function form($instance) {
         global $wpdb;
 ?>
      <p>请在主题设置 &raquo; 广告设置 中进行设置</p>
