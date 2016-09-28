@@ -95,16 +95,17 @@ jQuery(document).ready(function() {
         });
     //新窗口打开
     $("a[rel='external'],a[rel='external nofollow']").click(
-        function() { window.open(this.href);
+        function() {
+            window.open(this.href);
             return false;
         });
     //伸缩栏
     $(".toggle_content").hide();
     $(".toggle_title").click(function() {
-            $(this).toggleClass("active").next().slideToggle('fast');
-            return false;
-        });
-        //鼠标title样式
+        $(this).toggleClass("active").next().slideToggle('fast');
+        return false;
+    });
+    //鼠标title样式
     $(function() {
         $("#wrapper-inner a").each(function(b) {
             if (this.title) {

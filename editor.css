@@ -5,77 +5,313 @@
  * @link        https://maicong.me/t/85
  * @version     1.0.4
  */
-blockquote{position:relative;width:90%;margin:4px auto;clear:both;color:#103A25;border:1px #ddd solid;border-radius:5px;padding:0 0 0 60px}
-blockquote:before{display:block;height:0;content:"“";margin-left:-50px;padding-top:8px;font:italic 600%/0.8 Cochin,Georgia,"Times New Roman",serif;color:#ccc}
-code{border:1px dashed #CCC;padding:2px 4px; margin:0 2px; border-radius:3px;}
-hr{background:url(images/line-content.png) no-repeat;height:2px; width:100%; margin:5px 0}
-pre{ background-color:#FCFCFC;border:1px solid #e8e8e8;border-radius: 5px;font:13px'Century Gothic','Microsoft YaHei',Verdana;margin:5px 0;padding:8px;word-wrap:break-word;word-break:break-all;white-space:pre-wrap;}
-.alignnone{ display:inline-block !important;}
-table {border-collapse: collapse; border-spacing: 0; }
-h1{font-size:20px;font-weight:normal;}
-h2{font-size:18px;}
-h3{font-size:16px;}
-h4{font-size:14px;}
-.line {background: url(images/line.png) center 0;margin: 0 auto;height: 2px;clear: both;position: relative;}
-.linefull {background: url(images/line-full.png) center 0;margin: 0 auto;height: 2px;clear: both;position: relative;}
-.wp_syntax pre{overflow:auto;overflow-x:hidden;overflow-y:hidden;width:743px;}
-.but-down,.but-heart,.but-text,.but-box,.but-search,.but-document,.but-link,.but-next,.but-music{padding:12px 20px 12px 0;display:inline-block;}
-.but-down a,.but-heart a,.but-text a,.but-box a,.but-search a,.but-document a,.but-link a,.but-next a,.but-music a{color:#474747 !important;float:left;font-size:13px;height:33px;padding-right:15px;text-decoration:none;text-shadow:1px 1px 1px #FFF !important}
-.but-down a span,.but-heart a span,.but-text a span,.but-box a span,.but-search a span,.but-document a span,.but-link a span,.but-next a span,.but-music a span{float:left;height:33px;padding-left:40px;padding-top:5px}
-.but-down a span{background:url(images/shortcode/but-down.png) no-repeat scroll 0 0 transparent}
-.but-down a{background:url(images/shortcode/but-down.png) no-repeat scroll right -34px transparent}
-.but-down a:hover span{background:url(images/shortcode/but-down.png) no-repeat scroll left -68px transparent}
-.but-down a:hover{background:url(images/shortcode/but-down.png) no-repeat scroll right -102px transparent}
-.but-down a:active span{background:url(images/shortcode/but-down.png) no-repeat scroll left -136px transparent}
-.but-down a:active{background:url(images/shortcode/but-down.png) no-repeat scroll right -170px transparent}
-.but-heart a span{background:url(images/shortcode/but-heart.png) no-repeat scroll 0 0 transparent}
-.but-heart a{background:url(images/shortcode/but-heart.png) no-repeat scroll right -34px transparent}
-.but-heart a:hover span{background:url(images/shortcode/but-heart.png) no-repeat scroll left -68px transparent}
-.but-heart a:hover{background:url(images/shortcode/but-heart.png) no-repeat scroll right -102px transparent}
-.but-heart a:active span{background:url(images/shortcode/but-heart.png) no-repeat scroll left -136px transparent}
-.but-heart a:active{background:url(images/shortcode/but-heart.png) no-repeat scroll right -170px transparent}
-.but-text a span{background:url(images/shortcode/but-text.png) no-repeat scroll 0 0 transparent}
-.but-text a{background:url(images/shortcode/but-text.png) no-repeat scroll right -34px transparent}
-.but-text a:hover span{background:url(images/shortcode/but-text.png) no-repeat scroll left -68px transparent}
-.but-text a:hover{background:url(images/shortcode/but-text.png) no-repeat scroll right -102px transparent}
-.but-text a:active span{background:url(images/shortcode/but-text.png) no-repeat scroll left -136px transparent}
-.but-text a:active{background:url(images/shortcode/but-text.png) no-repeat scroll right -170px transparent}
-.but-box a span{background:url(images/shortcode/but-box.png) no-repeat scroll 0 0 transparent}
-.but-box a{background:url(images/shortcode/but-box.png) no-repeat scroll right -34px transparent}
-.but-box a:hover span{background:url(images/shortcode/but-box.png) no-repeat scroll left -68px transparent}
-.but-box a:hover{background:url(images/shortcode/but-box.png) no-repeat scroll right -102px transparent}
-.but-box a:active span{background:url(images/shortcode/but-box.png) no-repeat scroll left -136px transparent}
-.but-box a:active{background:url(images/shortcode/but-box.png) no-repeat scroll right -170px transparent}
-.but-search a span{background:url(images/shortcode/but-search.png) no-repeat scroll 0 0 transparent}
-.but-search a{background:url(images/shortcode/but-search.png) no-repeat scroll right -34px transparent}
-.but-search a:hover span{background:url(images/shortcode/but-search.png) no-repeat scroll left -68px transparent}
-.but-search a:hover{background:url(images/shortcode/but-search.png) no-repeat scroll right -102px transparent}
-.but-search a:active span{background:url(images/shortcode/but-search.png) no-repeat scroll left -136px transparent}
-.but-search a:active{background:url(images/shortcode/but-search.png) no-repeat scroll right -170px transparent}
-.but-document a span{background:url(images/shortcode/but-document.png) no-repeat scroll 0 0 transparent}
-.but-document a{background:url(images/shortcode/but-document.png) no-repeat scroll right -34px transparent}
-.but-document a:hover span{background:url(images/shortcode/but-document.png) no-repeat scroll left -68px transparent}
-.but-document a:hover{background:url(images/shortcode/but-document.png) no-repeat scroll right -102px transparent}
-.but-document a:active span{background:url(images/shortcode/but-document.png) no-repeat scroll left -136px transparent}
-.but-document a:active{background:url(images/shortcode/but-document.png) no-repeat scroll right -170px transparent}
-.but-link a span{background:url(images/shortcode/but-link.png) no-repeat scroll 0 0 transparent}
-.but-link a{background:url(images/shortcode/but-link.png) no-repeat scroll right -34px transparent}
-.but-link a:hover span{background:url(images/shortcode/but-link.png) no-repeat scroll left -68px transparent}
-.but-link a:hover{background:url(images/shortcode/but-link.png) no-repeat scroll right -102px transparent}
-.but-link a:active span{background:url(images/shortcode/but-link.png) no-repeat scroll left -136px transparent}
-.but-link a:active{background:url(images/shortcode/but-link.png) no-repeat scroll right -170px transparent}
-.but-next a span{background:url(images/shortcode/but-next.png) no-repeat scroll 0 0 transparent}
-.but-next a{background:url(images/shortcode/but-next.png) no-repeat scroll right -34px transparent}
-.but-next a:hover span{background:url(images/shortcode/but-next.png) no-repeat scroll left -68px transparent}
-.but-next a:hover{background:url(images/shortcode/but-next.png) no-repeat scroll right -102px transparent}
-.but-next a:active span{background:url(images/shortcode/but-next.png) no-repeat scroll left -136px transparent}
-.but-next a:active{background:url(images/shortcode/but-next.png) no-repeat scroll right -170px transparent}
-.but-music a span{background:url(images/shortcode/but-music.png) no-repeat scroll 0 0 transparent}
-.but-music a{background:url(images/shortcode/but-music.png) no-repeat scroll right -34px transparent}
-.but-music a:hover span{background:url(images/shortcode/but-music.png) no-repeat scroll left -68px transparent}
-.but-music a:hover{background:url(images/shortcode/but-music.png) no-repeat scroll right -102px transparent}
-.but-music a:active span{background:url(images/shortcode/but-music.png) no-repeat scroll left -136px transparent}
-.but-music a:active{background:url(images/shortcode/but-music.png) no-repeat scroll right -170px transparent}
-.toggle_title{background:url(images/shortcode/plus.png) no-repeat;height:29px;font-size:14px;color:#5e6069;cursor:pointer;padding:3px 0 0 48px}
-.active{background:url(images/shortcode/minus.png) no-repeat;height:29px}
-.toggle_content{background:#F5F5F5;color:#515151;border-left:1px solid #DEDEDE;border-bottom:1px solid #DEDEDE;border-right:1px solid #DEDEDE;overflow:auto;margin:-3px 0 15px;padding:5px 15px}
+
+blockquote {
+    position: relative;
+    width: 90%;
+    margin: 4px auto;
+    clear: both;
+    color: #103A25;
+    border: 1px #ddd solid;
+    border-radius: 5px;
+    padding: 0 0 0 60px
+}
+blockquote:before {
+    display: block;
+    height: 0;
+    content: "“";
+    margin-left: -50px;
+    padding-top: 8px;
+    font: italic 600%/0.8 Cochin, Georgia, "Times New Roman", serif;
+    color: #ccc
+}
+code {
+    border: 1px dashed #CCC;
+    padding: 2px 4px;
+    margin: 0 2px;
+    border-radius: 3px;
+}
+hr {
+    background: url(images/line-content.png) no-repeat;
+    height: 2px;
+    width: 100%;
+    margin: 5px 0
+}
+pre {
+    background-color: #FCFCFC;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    font: 13px'Century Gothic', 'Microsoft YaHei', Verdana;
+    margin: 5px 0;
+    padding: 8px;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+.alignnone {
+    display: inline-block !important;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+h1 {
+    font-size: 20px;
+    font-weight: normal;
+}
+h2 {
+    font-size: 18px;
+}
+h3 {
+    font-size: 16px;
+}
+h4 {
+    font-size: 14px;
+}
+.line {
+    background: url(images/line.png) center 0;
+    margin: 0 auto;
+    height: 2px;
+    clear: both;
+    position: relative;
+}
+.linefull {
+    background: url(images/line-full.png) center 0;
+    margin: 0 auto;
+    height: 2px;
+    clear: both;
+    position: relative;
+}
+.wp_syntax pre {
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 743px;
+}
+.but-down,
+.but-heart,
+.but-text,
+.but-box,
+.but-search,
+.but-document,
+.but-link,
+.but-next,
+.but-music {
+    padding: 12px 20px 12px 0;
+    display: inline-block;
+}
+.but-down a,
+.but-heart a,
+.but-text a,
+.but-box a,
+.but-search a,
+.but-document a,
+.but-link a,
+.but-next a,
+.but-music a {
+    color: #474747 !important;
+    float: left;
+    font-size: 13px;
+    height: 33px;
+    padding-right: 15px;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #FFF !important
+}
+.but-down a span,
+.but-heart a span,
+.but-text a span,
+.but-box a span,
+.but-search a span,
+.but-document a span,
+.but-link a span,
+.but-next a span,
+.but-music a span {
+    float: left;
+    height: 33px;
+    padding-left: 40px;
+    padding-top: 5px
+}
+.but-down a span {
+    background: url(images/shortcode/but-down.png) no-repeat scroll 0 0 transparent
+}
+.but-down a {
+    background: url(images/shortcode/but-down.png) no-repeat scroll right -34px transparent
+}
+.but-down a:hover span {
+    background: url(images/shortcode/but-down.png) no-repeat scroll left -68px transparent
+}
+.but-down a:hover {
+    background: url(images/shortcode/but-down.png) no-repeat scroll right -102px transparent
+}
+.but-down a:active span {
+    background: url(images/shortcode/but-down.png) no-repeat scroll left -136px transparent
+}
+.but-down a:active {
+    background: url(images/shortcode/but-down.png) no-repeat scroll right -170px transparent
+}
+.but-heart a span {
+    background: url(images/shortcode/but-heart.png) no-repeat scroll 0 0 transparent
+}
+.but-heart a {
+    background: url(images/shortcode/but-heart.png) no-repeat scroll right -34px transparent
+}
+.but-heart a:hover span {
+    background: url(images/shortcode/but-heart.png) no-repeat scroll left -68px transparent
+}
+.but-heart a:hover {
+    background: url(images/shortcode/but-heart.png) no-repeat scroll right -102px transparent
+}
+.but-heart a:active span {
+    background: url(images/shortcode/but-heart.png) no-repeat scroll left -136px transparent
+}
+.but-heart a:active {
+    background: url(images/shortcode/but-heart.png) no-repeat scroll right -170px transparent
+}
+.but-text a span {
+    background: url(images/shortcode/but-text.png) no-repeat scroll 0 0 transparent
+}
+.but-text a {
+    background: url(images/shortcode/but-text.png) no-repeat scroll right -34px transparent
+}
+.but-text a:hover span {
+    background: url(images/shortcode/but-text.png) no-repeat scroll left -68px transparent
+}
+.but-text a:hover {
+    background: url(images/shortcode/but-text.png) no-repeat scroll right -102px transparent
+}
+.but-text a:active span {
+    background: url(images/shortcode/but-text.png) no-repeat scroll left -136px transparent
+}
+.but-text a:active {
+    background: url(images/shortcode/but-text.png) no-repeat scroll right -170px transparent
+}
+.but-box a span {
+    background: url(images/shortcode/but-box.png) no-repeat scroll 0 0 transparent
+}
+.but-box a {
+    background: url(images/shortcode/but-box.png) no-repeat scroll right -34px transparent
+}
+.but-box a:hover span {
+    background: url(images/shortcode/but-box.png) no-repeat scroll left -68px transparent
+}
+.but-box a:hover {
+    background: url(images/shortcode/but-box.png) no-repeat scroll right -102px transparent
+}
+.but-box a:active span {
+    background: url(images/shortcode/but-box.png) no-repeat scroll left -136px transparent
+}
+.but-box a:active {
+    background: url(images/shortcode/but-box.png) no-repeat scroll right -170px transparent
+}
+.but-search a span {
+    background: url(images/shortcode/but-search.png) no-repeat scroll 0 0 transparent
+}
+.but-search a {
+    background: url(images/shortcode/but-search.png) no-repeat scroll right -34px transparent
+}
+.but-search a:hover span {
+    background: url(images/shortcode/but-search.png) no-repeat scroll left -68px transparent
+}
+.but-search a:hover {
+    background: url(images/shortcode/but-search.png) no-repeat scroll right -102px transparent
+}
+.but-search a:active span {
+    background: url(images/shortcode/but-search.png) no-repeat scroll left -136px transparent
+}
+.but-search a:active {
+    background: url(images/shortcode/but-search.png) no-repeat scroll right -170px transparent
+}
+.but-document a span {
+    background: url(images/shortcode/but-document.png) no-repeat scroll 0 0 transparent
+}
+.but-document a {
+    background: url(images/shortcode/but-document.png) no-repeat scroll right -34px transparent
+}
+.but-document a:hover span {
+    background: url(images/shortcode/but-document.png) no-repeat scroll left -68px transparent
+}
+.but-document a:hover {
+    background: url(images/shortcode/but-document.png) no-repeat scroll right -102px transparent
+}
+.but-document a:active span {
+    background: url(images/shortcode/but-document.png) no-repeat scroll left -136px transparent
+}
+.but-document a:active {
+    background: url(images/shortcode/but-document.png) no-repeat scroll right -170px transparent
+}
+.but-link a span {
+    background: url(images/shortcode/but-link.png) no-repeat scroll 0 0 transparent
+}
+.but-link a {
+    background: url(images/shortcode/but-link.png) no-repeat scroll right -34px transparent
+}
+.but-link a:hover span {
+    background: url(images/shortcode/but-link.png) no-repeat scroll left -68px transparent
+}
+.but-link a:hover {
+    background: url(images/shortcode/but-link.png) no-repeat scroll right -102px transparent
+}
+.but-link a:active span {
+    background: url(images/shortcode/but-link.png) no-repeat scroll left -136px transparent
+}
+.but-link a:active {
+    background: url(images/shortcode/but-link.png) no-repeat scroll right -170px transparent
+}
+.but-next a span {
+    background: url(images/shortcode/but-next.png) no-repeat scroll 0 0 transparent
+}
+.but-next a {
+    background: url(images/shortcode/but-next.png) no-repeat scroll right -34px transparent
+}
+.but-next a:hover span {
+    background: url(images/shortcode/but-next.png) no-repeat scroll left -68px transparent
+}
+.but-next a:hover {
+    background: url(images/shortcode/but-next.png) no-repeat scroll right -102px transparent
+}
+.but-next a:active span {
+    background: url(images/shortcode/but-next.png) no-repeat scroll left -136px transparent
+}
+.but-next a:active {
+    background: url(images/shortcode/but-next.png) no-repeat scroll right -170px transparent
+}
+.but-music a span {
+    background: url(images/shortcode/but-music.png) no-repeat scroll 0 0 transparent
+}
+.but-music a {
+    background: url(images/shortcode/but-music.png) no-repeat scroll right -34px transparent
+}
+.but-music a:hover span {
+    background: url(images/shortcode/but-music.png) no-repeat scroll left -68px transparent
+}
+.but-music a:hover {
+    background: url(images/shortcode/but-music.png) no-repeat scroll right -102px transparent
+}
+.but-music a:active span {
+    background: url(images/shortcode/but-music.png) no-repeat scroll left -136px transparent
+}
+.but-music a:active {
+    background: url(images/shortcode/but-music.png) no-repeat scroll right -170px transparent
+}
+.toggle_title {
+    background: url(images/shortcode/plus.png) no-repeat;
+    height: 29px;
+    font-size: 14px;
+    color: #5e6069;
+    cursor: pointer;
+    padding: 3px 0 0 48px
+}
+.active {
+    background: url(images/shortcode/minus.png) no-repeat;
+    height: 29px
+}
+.toggle_content {
+    background: #F5F5F5;
+    color: #515151;
+    border-left: 1px solid #DEDEDE;
+    border-bottom: 1px solid #DEDEDE;
+    border-right: 1px solid #DEDEDE;
+    overflow: auto;
+    margin: -3px 0 15px;
+    padding: 5px 15px
+}

@@ -5,10 +5,36 @@
  * @link        https://maicong.me/t/85
  * @version     1.0.4
  */
-#header_inner,#menu,#topbar,#index_content,#content,#saybox,#imgbox_content,#footer,#footerlink,.widget{border:1px #ddd solid;}
-#header_inner{ border-bottom:none;}
-#menu{ border-top:none; width:auto;}
-#content,#index_content{ margin:0px;}
-.readmore{ display:none}
-#index_content li:hover{ background:#FBFBFB;}
-#footerlink{ margin-top:10px;}
+
+#header_inner,
+#menu,
+#topbar,
+#index_content,
+#content,
+#saybox,
+#imgbox_content,
+#footer,
+#footerlink,
+.widget {
+    border: 1px #ddd solid;
+}
+#header_inner {
+    border-bottom: none;
+}
+#menu {
+    border-top: none;
+    width: auto;
+}
+#content,
+#index_content {
+    margin: 0px;
+}
+.readmore {
+    display: none
+}
+#index_content li:hover {
+    background: #FBFBFB;
+}
+#footerlink {
+    margin-top: 10px;
+}
