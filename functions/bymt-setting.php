@@ -22,7 +22,7 @@ function bymt_theme_page() {
 	add_action( 'admin_init', 'register_bymt_settings' );
 }
 function register_bymt_settings() {
-	register_setting( 'bymt-settings-group', 'bymt_options' );
+	register_setting( 'bymt-settings-group-v2', 'bymt_options_v2' );
 }
 function bymt_settings_page() {
 wp_enqueue_script('thickbox');
@@ -165,12 +165,12 @@ error_reporting(0);
 	<h2>BYMT主题设置</h2>
 	<?php
 	if(isset($_REQUEST['settings-updated']) && !isset($_REQUEST['reset'])) { echo '<div class="bymt_msg msg_s"><i></i>主题设置保存成功</div>'; }
-	if(isset($_REQUEST['reset']) == 'reset' ) { delete_option('bymt_options'); echo '<div class="bymt_msg msg_r"><i></i>主题设置重置成功</div>'; }
+	if(isset($_REQUEST['reset']) == 'reset' ) { delete_option('bymt_options_v2'); echo '<div class="bymt_msg msg_r"><i></i>主题设置重置成功</div>'; }
 	?>
 	<div class="bymt_setver">当前主题：<a href="https://github.com/maicong/BYMT/tree/v2" target="_blank">BYMT v2</a> | 当前版本：<a href="https://github.com/maicong/BYMT/releases/tag/v<?php echo THEMEVER; ?>" target="_blank"><?php echo THEMEVER; ?></a> | 最后更新：<a><?php echo THEMEUPDATE; ?></a> | 主题作者：<a href="https://maicong.me/" target="_blank">麦田一根葱</a></div>
 	<form method="post"  id="form1" action="options.php">
-		<?php settings_fields( 'bymt-settings-group' ); ?>
-		<?php $options = get_option('bymt_options'); ?>
+		<?php settings_fields( 'bymt-settings-group-v2' ); ?>
+		<?php $options = get_option('bymt_options_v2'); ?>
 		<div class="bymt_setbox">
 			<ul class="nav">
 				<li id="#li_basic"><a>基本设置</a></li>
@@ -193,19 +193,19 @@ error_reporting(0);
 							<div class="wlabel"><?php echo $val['tit']; ?></div>
 							<div class="field">
 							<?php if($val['type']=="text") { ?>
-								<input type="text" name="bymt_options[<?php echo $val['name']; ?>]" placeholder="<?php echo $val['std']; ?>" value="<?php esc_attr_e($options[$val['name']]); ?>" />
+								<input type="text" name="bymt_options_v2[<?php echo $val['name']; ?>]" placeholder="<?php echo $val['std']; ?>" value="<?php esc_attr_e($options[$val['name']]); ?>" />
 							<?php }elseif($val['type']=="textarea") { ?>
-								<textarea type="textarea" name="bymt_options[<?php echo $val['name']; ?>]" placeholder="<?php echo $val['std']; ?>"><?php esc_attr_e($options[$val['name']]); ?></textarea>
+								<textarea type="textarea" name="bymt_options_v2[<?php echo $val['name']; ?>]" placeholder="<?php echo $val['std']; ?>"><?php esc_attr_e($options[$val['name']]); ?></textarea>
 							<?php }elseif($val['type']=="radio") { ?>
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> 不使用 </label>
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1" <?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 使用 </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> 不使用 </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1" <?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 使用 </label>
 							<?php } ?>
 							</div>
 							<div class="description"><?php echo $val['desc']; ?></div>
 							<?php if(!empty($val['child_name'])) { ?>
 							<div class="bymt_children bymt_nodisplay">
 								<div class="wlabel"><?php echo $val['child_tit']; ?></div>
-								<div class="field"><textarea type="textarea" name="bymt_options[<?php echo $val['child_name']; ?>]" placeholder="<?php echo $val['child_std']; ?>"><?php esc_attr_e($options[$val['child_name']]); ?></textarea></div>
+								<div class="field"><textarea type="textarea" name="bymt_options_v2[<?php echo $val['child_name']; ?>]" placeholder="<?php echo $val['child_std']; ?>"><?php esc_attr_e($options[$val['child_name']]); ?></textarea></div>
 								<div class="description"><?php echo $val['child_desc']; ?></div>
 							</div>
 							<?php } ?>
@@ -214,7 +214,7 @@ error_reporting(0);
 						<li>
 							<div class="wlabel">底部左侧内容</div>
 							<div class="field">
-								<textarea type="textarea" name="bymt_options[footer]"><?php if(!empty($options['footer'])){esc_attr_e($options['footer']); }else{ esc_attr_e('&copy; 2012-2014&nbsp;<a href="/">'.get_bloginfo('name').'</a>&nbsp;All Rights Reserved'); }?>
+								<textarea type="textarea" name="bymt_options_v2[footer]"><?php if(!empty($options['footer'])){esc_attr_e($options['footer']); }else{ esc_attr_e('&copy; 2012-2014&nbsp;<a href="/">'.get_bloginfo('name').'</a>&nbsp;All Rights Reserved'); }?>
 </textarea>
 								<div class="foot_preview">底部左侧内容预览：<?php if(!empty($options['footer'])) : ?><?php echo $options['footer']; ?><?php else : ?>&copy; 2012-2014&nbsp;<a href="/"><?php bloginfo( 'name' ); ?></a>&nbsp;All Rights Reserved<?php endif; ?>
 								</div>
@@ -229,38 +229,38 @@ error_reporting(0);
 					<li>
 							<div class="wlabel">logo类型</div>
 							<div class="field">
-								<label><input type="radio" name="bymt_options[check_logo]" id="cklogoimg" class="bymt_radio" value="" <?php checked('', $options['check_logo']); ?>/><label for="cklogoimg"></label> 图片 </label>
-								<label><input type="radio" name="bymt_options[check_logo]" id="cklogotxt" class="bymt_radio" value="1" <?php checked('1', $options['check_logo']); ?>/><label for="cklogotxt"></label> 标题 </label>
+								<label><input type="radio" name="bymt_options_v2[check_logo]" id="cklogoimg" class="bymt_radio" value="" <?php checked('', $options['check_logo']); ?>/><label for="cklogoimg"></label> 图片 </label>
+								<label><input type="radio" name="bymt_options_v2[check_logo]" id="cklogotxt" class="bymt_radio" value="1" <?php checked('1', $options['check_logo']); ?>/><label for="cklogotxt"></label> 标题 </label>
 							</div>
 							<div class="description">设置网站logo显示类型，默认为使用logo图片</div>
 							<div class="bymt_children logoimg">
 								<div class="wlabel">图片logo设置</div>
 								<div class="field">
-									<label><input type="radio" name="bymt_options[custom_logo]" id="logoimg1" class="bymt_radio" value="" <?php checked('', $options['custom_logo']); ?>/><label for="logoimg1"></label> 默认 </label>
-									<label><input type="radio" name="bymt_options[custom_logo]" id="logoimg2" class="bymt_radio" value="1" <?php checked('1', $options['custom_logo']); ?>/><label for="logoimg2"></label> 自定义 </label>
+									<label><input type="radio" name="bymt_options_v2[custom_logo]" id="logoimg1" class="bymt_radio" value="" <?php checked('', $options['custom_logo']); ?>/><label for="logoimg1"></label> 默认 </label>
+									<label><input type="radio" name="bymt_options_v2[custom_logo]" id="logoimg2" class="bymt_radio" value="1" <?php checked('1', $options['custom_logo']); ?>/><label for="logoimg2"></label> 自定义 </label>
 								</div>
 								<div class="description">设置网站logo，尺寸建议：280px*60px</div>
 									<div class="bymt_children bymt_nodisplay">
 									<div class="wlabel">图片地址</div>
-									<div class="field"><input type="text" name="bymt_options[logo_url]" id="logo_url" placeholder="请输入图片地址" value="<?php echo esc_url($options['logo_url']); ?>"/><input type="button" id="upload_ck" class="bymt_btn btn-upload" name="upload_button" value="上传" /></div>
+									<div class="field"><input type="text" name="bymt_options_v2[logo_url]" id="logo_url" placeholder="请输入图片地址" value="<?php echo esc_url($options['logo_url']); ?>"/><input type="button" id="upload_ck" class="bymt_btn btn-upload" name="upload_button" value="上传" /></div>
 									<div class="description">请输入图片地址，上传后请点击<u>插入到文章</u></div>
 								</div>
 							</div>
 							<div class="bymt_children bymt_nodisplay logotitle">
 								<div class="wlabel">标题设置</div>
-								<div class="field"><input type="text" name="bymt_options[custom_sitetitle]" placeholder="请输入自定义标题" value="<?php esc_attr_e($options['custom_sitetitle']); ?>"/></div>
+								<div class="field"><input type="text" name="bymt_options_v2[custom_sitetitle]" placeholder="请输入自定义标题" value="<?php esc_attr_e($options['custom_sitetitle']); ?>"/></div>
 								<div class="description">自定义您的网站标题，留空则使用默认标题</div>
 							</div>
 							<div class="bymt_children bymt_nodisplay logodesc">
 								<div class="wlabel">一句话描述</div>
 								<div class="field">
-									<label><input type="radio" name="bymt_options[check_logodesc]" id="logodesc1" class="bymt_radio" value="" <?php checked('', $options['check_logodesc']); ?>/><label for="logodesc1"></label> 不显示 </label>
-									<label><input type="radio" name="bymt_options[check_logodesc]" id="logodesc2" class="bymt_radio" value="1" <?php checked('1', $options['check_logodesc']); ?>/><label for="logodesc2"></label> 显示 </label>
+									<label><input type="radio" name="bymt_options_v2[check_logodesc]" id="logodesc1" class="bymt_radio" value="" <?php checked('', $options['check_logodesc']); ?>/><label for="logodesc1"></label> 不显示 </label>
+									<label><input type="radio" name="bymt_options_v2[check_logodesc]" id="logodesc2" class="bymt_radio" value="1" <?php checked('1', $options['check_logodesc']); ?>/><label for="logodesc2"></label> 显示 </label>
 								</div>
 								<div class="description">显示网站logo标题下的描述信息</div>
 									<div class="bymt_children bymt_nodisplay">
 									<div class="wlabel">自定义描述</div>
-									<div class="field"><input type="text" name="bymt_options[custom_logodesc]" placeholder="请输入自定义描述" value="<?php esc_attr_e($options['custom_logodesc']); ?>"/></div>
+									<div class="field"><input type="text" name="bymt_options_v2[custom_logodesc]" placeholder="请输入自定义描述" value="<?php esc_attr_e($options['custom_logodesc']); ?>"/></div>
 									<div class="description">自定义描述信息，留空则使用默认</div>
 								</div>
 							</div>
@@ -269,13 +269,13 @@ error_reporting(0);
 						<li>
 							<div class="wlabel"><?php echo $val['tit']; ?></div>
 							<div class="field">
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> <?php if($val['name']=="favicon_ck" || $val['name']=="custom_topblock" || $val['name']=="custom_search") { echo "默认"; }else{ echo "不显示"; } ?> </label>
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio <?php if($val['name']=="custom_topblock"){ echo 'cktype_l'; }else{ echo 'cktype_r'; } ?>" value="1"<?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> <?php if($val['name']=="favicon_ck" || $val['name']=="custom_search") { echo "自定义"; }elseif($val['name']=="custom_topblock"){ echo "焦点图"; }else{ echo "显示"; } ?> </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> <?php if($val['name']=="favicon_ck" || $val['name']=="custom_topblock" || $val['name']=="custom_search") { echo "默认"; }else{ echo "不显示"; } ?> </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio <?php if($val['name']=="custom_topblock"){ echo 'cktype_l'; }else{ echo 'cktype_r'; } ?>" value="1"<?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> <?php if($val['name']=="favicon_ck" || $val['name']=="custom_search") { echo "自定义"; }elseif($val['name']=="custom_topblock"){ echo "焦点图"; }else{ echo "显示"; } ?> </label>
 							 <?php if($val['name']=="custom_topblock"){ ?>
-							 	<label><input type="radio" name="bymt_options[custom_topblock]" id="custom_topblock_3" class="bymt_radio cktype_r" value="2" <?php checked('2', $options['custom_topblock']); ?>/><label for="custom_topblock_3"></label> 自定义 </label>
+							 	<label><input type="radio" name="bymt_options_v2[custom_topblock]" id="custom_topblock_3" class="bymt_radio cktype_r" value="2" <?php checked('2', $options['custom_topblock']); ?>/><label for="custom_topblock_3"></label> 自定义 </label>
 							<?php } ?>
 							<?php if(!empty($val['check_name'])) { ?>
-								<label><input type="checkbox" name="bymt_options[<?php echo $val['check_name']; ?>]" class="bymt_checkbox" id="<?php echo $val['check_name']; ?>"<?php checked('on', $options[$val['check_name']]); ?>/><label for="<?php echo $val['check_name']; ?>"></label> <?php echo $val['check_std']; ?> </label>
+								<label><input type="checkbox" name="bymt_options_v2[<?php echo $val['check_name']; ?>]" class="bymt_checkbox" id="<?php echo $val['check_name']; ?>"<?php checked('on', $options[$val['check_name']]); ?>/><label for="<?php echo $val['check_name']; ?>"></label> <?php echo $val['check_std']; ?> </label>
 							<?php } ?>
 							</div>
 							<div class="description"><?php echo $val['desc']; ?></div>
@@ -285,11 +285,11 @@ error_reporting(0);
 								<div class="wlabel"><?php echo $val['child_tit_'.$i]; ?></div>
 								<div class="field">
 								<?php if($val['child_type_'.$i]=="text") { ?>
-								<input type="text" name="bymt_options[<?php echo $val['child_name_'.$i]; ?>]" id="<?php echo $val['child_name_'.$i]; ?>" placeholder="<?php echo $val['child_std_'.$i]; ?>" value="<?php esc_attr_e($options[$val['child_name_'.$i]]); ?>" /><?php if($val['upload_'.$i]=="1") { ?><input type="button" name="upload_button" id="upload_ck" class="bymt_btn btn-upload" value="上传" /><?php } ?>
+								<input type="text" name="bymt_options_v2[<?php echo $val['child_name_'.$i]; ?>]" id="<?php echo $val['child_name_'.$i]; ?>" placeholder="<?php echo $val['child_std_'.$i]; ?>" value="<?php esc_attr_e($options[$val['child_name_'.$i]]); ?>" /><?php if($val['upload_'.$i]=="1") { ?><input type="button" name="upload_button" id="upload_ck" class="bymt_btn btn-upload" value="上传" /><?php } ?>
 								<?php }elseif($val['child_type_'.$i]=="textarea") { ?>
-								<textarea type="textarea" name="bymt_options[<?php echo $val['child_name_'.$i]; ?>]" placeholder="<?php echo $val['child_std_'.$i]; ?>"><?php esc_attr_e($options[$val['child_name_'.$i]]); ?></textarea>
+								<textarea type="textarea" name="bymt_options_v2[<?php echo $val['child_name_'.$i]; ?>]" placeholder="<?php echo $val['child_std_'.$i]; ?>"><?php esc_attr_e($options[$val['child_name_'.$i]]); ?></textarea>
 								<?php }elseif($val['child_type_'.$i]=="number") { ?>
-								<input type="number" class="short" name="bymt_options[<?php echo $val['child_name_'.$i]; ?>]" value="<?php echo $options[$val['child_name_'.$i]]; ?>"/>
+								<input type="number" class="short" name="bymt_options_v2[<?php echo $val['child_name_'.$i]; ?>]" value="<?php echo $options[$val['child_name_'.$i]]; ?>"/>
 								<?php } ?></div>
 								<div class="description"><?php echo $val['child_desc_'.$i]; ?></div>
 							</div>
@@ -305,8 +305,8 @@ error_reporting(0);
 						<li>
 							<div class="wlabel"><?php echo $val['tit']; ?></div>
 							<div class="field">
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> 不使用 </label>
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1" <?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 使用 </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> 不使用 </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1" <?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 使用 </label>
 							</div>
 							<div class="description"><?php echo $val['desc']; ?></div>
 							<?php if(!empty($val['child_name'])) { ?>
@@ -314,9 +314,9 @@ error_reporting(0);
 								<div class="wlabel"><?php echo $val['child_tit']; ?></div>
 								<div class="field">
 								<?php if($val['child_type']=="textarea") { ?>
-									<textarea type="textarea" name="bymt_options[<?php echo $val['child_name']; ?>]" placeholder="<?php echo $val['child_std']; ?>"><?php esc_attr_e($options[$val['child_name']]); ?></textarea>
+									<textarea type="textarea" name="bymt_options_v2[<?php echo $val['child_name']; ?>]" placeholder="<?php echo $val['child_std']; ?>"><?php esc_attr_e($options[$val['child_name']]); ?></textarea>
 								<?php }elseif($val['child_type']=="number") { ?>
-									<input type="number" class="short" name="bymt_options[<?php echo $val['child_name']; ?>]" value="<?php echo $options[$val['child_name']]; ?>"/>
+									<input type="number" class="short" name="bymt_options_v2[<?php echo $val['child_name']; ?>]" value="<?php echo $options[$val['child_name']]; ?>"/>
 									<?php } ?>
 								</div>
 								<div class="description"><?php echo $val['child_desc']; ?></div>
@@ -333,8 +333,8 @@ error_reporting(0);
 						<li>
 							<div class="wlabel"><?php echo $val['tit']; ?></div>
 							<div class="field">
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label>  不使用  </label>
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1" <?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 使用 </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label>  不使用  </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1" <?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 使用 </label>
 							</div>
 							<div class="description"><?php echo $val['desc']; ?></div>
 							<?php if(!empty($val['child_tit'])) { ?>
@@ -342,11 +342,11 @@ error_reporting(0);
 								<div class="wlabel"><?php echo $val['child_tit']; ?></div>
 								<div class="field">
 								<?php if($val['child_type']=="text") { ?>
-								<input type="text" name="bymt_options[<?php echo $val['child_name']; ?>]" placeholder="<?php echo $val['child_std']; ?>" value="<?php echo esc_attr_e($options[$val['child_name']]); ?>"/>
+								<input type="text" name="bymt_options_v2[<?php echo $val['child_name']; ?>]" placeholder="<?php echo $val['child_std']; ?>" value="<?php echo esc_attr_e($options[$val['child_name']]); ?>"/>
 								<?php }elseif($val['child_type']=="number") { ?>
-								<input type="number" class="short" name="bymt_options[<?php echo $val['child_name']; ?>]" value="<?php echo $options[$val['child_name']]; ?>"/>
+								<input type="number" class="short" name="bymt_options_v2[<?php echo $val['child_name']; ?>]" value="<?php echo $options[$val['child_name']]; ?>"/>
 								<?php }elseif($val['child_type']=="checkbox") { foreach ($val['child_name'] as $name => $value) { ?>
-								<label><input type="checkbox" name="bymt_options[<?php echo $name; ?>]" class="bymt_inodisplay bymt_checkbox" id="<?php echo $name; ?>" <?php checked('on', $options[$name]); ?>/><label for="<?php echo $name; ?>"></label> <?php echo $value; ?> </label>
+								<label><input type="checkbox" name="bymt_options_v2[<?php echo $name; ?>]" class="bymt_inodisplay bymt_checkbox" id="<?php echo $name; ?>" <?php checked('on', $options[$name]); ?>/><label for="<?php echo $name; ?>"></label> <?php echo $value; ?> </label>
 								<?php if($name=="tools_q"){ echo "<br />"; } ?>
 								<?php } } ?>
 								</div>
@@ -356,7 +356,7 @@ error_reporting(0);
 							<?php if(!empty($val['child_tit2'])) { ?>
 							<div class="bymt_children bymt_nodisplay">
 								<div class="wlabel"><?php echo $val['child_tit2']; ?></div>
-								<div class="field"><input type="number" class="short" name="bymt_options[<?php echo $val['child_name2']; ?>]" value="<?php echo esc_attr_e($options[$val['child_name2']]); ?>"/></div>
+								<div class="field"><input type="number" class="short" name="bymt_options_v2[<?php echo $val['child_name2']; ?>]" value="<?php echo esc_attr_e($options[$val['child_name2']]); ?>"/></div>
 								<div class="description"><?php echo $val['child_desc2']; ?></div>
 							</div>
 							<?php } ?>
@@ -371,14 +371,14 @@ error_reporting(0);
 						<li>
 							<div class="wlabel"><?php echo $val['tit']; ?></div>
 							<div class="field">
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> 不显示 </label>
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1" <?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 显示 </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> 不显示 </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1" <?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 显示 </label>
 							</div>
 							<div class="description"><?php echo $val['desc']; ?></div>
 							<?php if(!empty($val['child_name'])) { ?>
 							<div class="bymt_children bymt_nodisplay">
 								<div class="wlabel"><?php echo $val['child_tit']; ?></div>
-								<div class="field"><input type="text" name="bymt_options[<?php echo $val['child_name']; ?>]" placeholder="<?php echo $val['child_std']; ?>" value="<?php esc_attr_e($options[$val['child_name']]); ?>"/><?php if($val['upload']=="1") { ?><input type="button" name="upload_button" id="upload_ck" class="bymt_btn btn-upload" value="上传" /><?php } ?></div>
+								<div class="field"><input type="text" name="bymt_options_v2[<?php echo $val['child_name']; ?>]" placeholder="<?php echo $val['child_std']; ?>" value="<?php esc_attr_e($options[$val['child_name']]); ?>"/><?php if($val['upload']=="1") { ?><input type="button" name="upload_button" id="upload_ck" class="bymt_btn btn-upload" value="上传" /><?php } ?></div>
 								<div class="description"><?php echo $val['child_desc']; ?></div>
 							</div>
 							<?php } ?>
@@ -393,26 +393,26 @@ error_reporting(0);
 						<li>
 							<div class="wlabel"><?php echo $val['tit']; ?></div>
 							<div class="field">
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> 不使用 </label>
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1"<?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 使用 </label>
-								<?php if($val['fixed']=="1"){ ?><label><input type="radio" name="bymt_options[s_fixed]" class="bymt_radio" id="<?php echo $val['fixedid']; ?>" value="<?php echo $val['fixedid']; ?>" <?php checked($val['fixedid'], $options["s_fixed"]); ?>/><label for="<?php echo $val['fixedid']; ?>"></label> 跟随滚动 </label><?php } ?>
-								<?php if($val['fixed']=="1"&&$options["s_fixed"]==$val['fixedid']){ ?><label><input type="radio" name="bymt_options[s_fixed]" class="bymt_radio" id="s_fixed_4" value="" <?php checked('s_fixed_4', $options["s_fixed"]); ?>/><label for="s_fixed_4"></label> 不跟随 </label><?php } ?>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> 不使用 </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1"<?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 使用 </label>
+								<?php if($val['fixed']=="1"){ ?><label><input type="radio" name="bymt_options_v2[s_fixed]" class="bymt_radio" id="<?php echo $val['fixedid']; ?>" value="<?php echo $val['fixedid']; ?>" <?php checked($val['fixedid'], $options["s_fixed"]); ?>/><label for="<?php echo $val['fixedid']; ?>"></label> 跟随滚动 </label><?php } ?>
+								<?php if($val['fixed']=="1"&&$options["s_fixed"]==$val['fixedid']){ ?><label><input type="radio" name="bymt_options_v2[s_fixed]" class="bymt_radio" id="s_fixed_4" value="" <?php checked('s_fixed_4', $options["s_fixed"]); ?>/><label for="s_fixed_4"></label> 不跟随 </label><?php } ?>
 							</div>
 							<div class="description"><?php echo $val['desc']; ?></div>
 							<?php if(!empty($val['child_name'])) { ?>
 							<div class="bymt_children bymt_nodisplay">
 								<div class="wlabel"><?php echo $val['child_tit']; ?></div>
 								<div class="field">
-								<textarea type="textarea" name="bymt_options[<?php echo $val['child_name']; ?>]"><?php esc_attr_e($options[$val['child_name']]); ?></textarea>
+								<textarea type="textarea" name="bymt_options_v2[<?php echo $val['child_name']; ?>]"><?php esc_attr_e($options[$val['child_name']]); ?></textarea>
 								<?php if(!empty($val['child_name2'])) { ?>
 								<br />
-								<textarea type="textarea" name="bymt_options[<?php echo $val['child_name2']; ?>]"><?php esc_attr_e($options[$val['child_name2']]); ?></textarea>
+								<textarea type="textarea" name="bymt_options_v2[<?php echo $val['child_name2']; ?>]"><?php esc_attr_e($options[$val['child_name2']]); ?></textarea>
 								<?php }if(!empty($val['child_name3'])) { ?>
 								<br />
-								<textarea type="textarea" name="bymt_options[<?php echo $val['child_name3']; ?>]"><?php esc_attr_e($options[$val['child_name3']]); ?></textarea>
+								<textarea type="textarea" name="bymt_options_v2[<?php echo $val['child_name3']; ?>]"><?php esc_attr_e($options[$val['child_name3']]); ?></textarea>
 								<?php }if(!empty($val['child_name4'])) { ?>
 								<br />
-								<textarea type="textarea" name="bymt_options[<?php echo $val['child_name4']; ?>]"><?php esc_attr_e($options[$val['child_name4']]); ?></textarea>
+								<textarea type="textarea" name="bymt_options_v2[<?php echo $val['child_name4']; ?>]"><?php esc_attr_e($options[$val['child_name4']]); ?></textarea>
 								<?php } ?>
 								</div>
 								<div class="description">支持html代码</div>
@@ -437,29 +437,29 @@ error_reporting(0);
 							<div class="bymt_children bymt_nodisplay sd_imgst_<?php echo $key ; ?>">
 							<div class="wlabel"><?php echo $val ; ?>焦点图获取类型</div>
 							<div class="field">
-								<label><input type="radio" name="bymt_options[sd_imgst_<?php echo $key ; ?>]" id="sd_imgst_<?php echo $key ; ?>_1" class="bymt_radio type" value="category" <?php checked('category', $options["sd_imgst_".$key]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_1"></label> 指定栏目 </label>
-								<label><input type="radio" name="bymt_options[sd_imgst_<?php echo $key ; ?>]" id="sd_imgst_<?php echo $key ; ?>_2" class="bymt_radio type" value="posts" <?php checked('posts', $options["sd_imgst_".$key]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_2"></label> 指定文章 </label>
-								<label><input type="radio" name="bymt_options[sd_imgst_<?php echo $key ; ?>]" id="sd_imgst_<?php echo $key ; ?>_3" class="bymt_radio type" value="hand" <?php checked('hand', $options["sd_imgst_".$key]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_3"></label> 手动添加 </label>
-								<label><input type="checkbox" name="bymt_options[sd_imgst_<?php echo $key ; ?>_tar]" class="bymt_checkbox" id="sd_imgst_<?php echo $key ; ?>_tar"<?php checked('on', $options["sd_imgst_".$key."_tar"]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_tar"></label> 新窗口打开 </label>
-								<label><input type="checkbox" name="bymt_options[sd_imgst_<?php echo $key ; ?>_pave]" class="bymt_checkbox" id="sd_imgst_<?php echo $key ; ?>_pave"<?php checked('on', $options["sd_imgst_".$key."_pave"]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_pave"></label> 自动铺平 </label>
+								<label><input type="radio" name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>]" id="sd_imgst_<?php echo $key ; ?>_1" class="bymt_radio type" value="category" <?php checked('category', $options["sd_imgst_".$key]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_1"></label> 指定栏目 </label>
+								<label><input type="radio" name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>]" id="sd_imgst_<?php echo $key ; ?>_2" class="bymt_radio type" value="posts" <?php checked('posts', $options["sd_imgst_".$key]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_2"></label> 指定文章 </label>
+								<label><input type="radio" name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>]" id="sd_imgst_<?php echo $key ; ?>_3" class="bymt_radio type" value="hand" <?php checked('hand', $options["sd_imgst_".$key]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_3"></label> 手动添加 </label>
+								<label><input type="checkbox" name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>_tar]" class="bymt_checkbox" id="sd_imgst_<?php echo $key ; ?>_tar"<?php checked('on', $options["sd_imgst_".$key."_tar"]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_tar"></label> 新窗口打开 </label>
+								<label><input type="checkbox" name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>_pave]" class="bymt_checkbox" id="sd_imgst_<?php echo $key ; ?>_pave"<?php checked('on', $options["sd_imgst_".$key."_pave"]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_pave"></label> 自动铺平 </label>
 							</div>
 							<div class="description">图片尺寸：<u><?php echo $slides_size_arr[$key] ; ?></u></div>
 							<div class="bymt_children bymt_nodisplay sd_imgst_<?php echo $key ; ?>_1">
 								<div class="wlabel">栏目设置</div>
 								<div class="field">
-								<label><i>选择栏目</i><select name="bymt_options[sd_imgst_<?php echo $key ; ?>_sel]" class="ckselect">
+								<label><i>选择栏目</i><select name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>_sel]" class="ckselect">
 								<?php foreach ($options_categories as $categories) { 	?>
 								<option value="<?php echo $categories[0]; ?>"<?php selected($categories[0], $options["sd_imgst_".$key."_sel"]); ?>><?php echo $categories[1]; ?></option>
 								<?php } ?>
 								</select></label>
-								<label><i class="mleft10">显示数量</i><input type="number" name="bymt_options[sd_imgst_<?php echo $key ; ?>_selnum]" class="short" value="<?php echo $options["sd_imgst_".$key."_selnum"]; ?>" /></label>
+								<label><i class="mleft10">显示数量</i><input type="number" name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>_selnum]" class="short" value="<?php echo $options["sd_imgst_".$key."_selnum"]; ?>" /></label>
 								</div>
 								<div class="description">选择一个栏目并设置显示数量</div>
 							</div>
 							<div class="bymt_children bymt_nodisplay sd_imgst_<?php echo $key ; ?>_2">
 								<div class="wlabel">文章设置</div>
 								<div class="field">
-								<label><select name="bymt_options[sd_imgst_<?php echo $key ; ?>_pos][]" class="select" multiple>
+								<label><select name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>_pos][]" class="select" multiple>
 								<?php foreach ($options_posts as $posts) { 	?>
 								<option value="<?php echo $posts[0]; ?>"<?php if(!empty($options["sd_imgst_".$key."_pos"])){ if (in_array($posts[0],$options["sd_imgst_".$key."_pos"])) {  echo 'selected="selected"'; } }; ?>><?php echo $posts[1]; ?></option>
 								<?php } ?>
@@ -472,24 +472,24 @@ error_reporting(0);
 								<div class="bymt_children" id="sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>">
 									<div class="wlabel">焦点图<?php echo $i ; ?></div>
 									<div class="field">
-									<label><input type="radio" name="bymt_options[sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck]" id="sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck_1" class="bymt_radio handck_l" value="" <?php checked('', $options["sd_imgst_".$key."_hand_".$i."_ck"]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck_1"></label> 不使用 </label>
-									<label><input type="radio" name="bymt_options[sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck]" id="sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck_2" class="bymt_radio handck_r" value="1" <?php checked('1', $options["sd_imgst_".$key."_hand_".$i."_ck"]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck_2"></label> 使用 </label>
+									<label><input type="radio" name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck]" id="sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck_1" class="bymt_radio handck_l" value="" <?php checked('', $options["sd_imgst_".$key."_hand_".$i."_ck"]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck_1"></label> 不使用 </label>
+									<label><input type="radio" name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck]" id="sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck_2" class="bymt_radio handck_r" value="1" <?php checked('1', $options["sd_imgst_".$key."_hand_".$i."_ck"]); ?>/><label for="sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_ck_2"></label> 使用 </label>
 									</div>
 									<div class="description">是否启用？</div>
 										<div class="bymt_children bymt_nodisplay">
 										<div class="bymt_children">
 											<div class="wlabel">链接地址(href)</div>
-											<div class="field"><input type="text" name="bymt_options[sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_href]" value="<?php echo esc_url($options["sd_imgst_".$key."_hand_".$i."_href"]); ?>" /></div>
+											<div class="field"><input type="text" name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_href]" value="<?php echo esc_url($options["sd_imgst_".$key."_hand_".$i."_href"]); ?>" /></div>
 											<div class="description">链接地址</div>
 										</div>
 										<div class="bymt_children">
 											<div class="wlabel">图片地址(src)</div>
-											<div class="field"><input type="text" name="bymt_options[sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_src]" id="sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_src" value="<?php echo esc_url($options["sd_imgst_".$key."_hand_".$i."_src"]); ?>" /><input type="button" name="upload_button" id="upload_ck" class="bymt_btn btn-upload" value="上传" /></div>
+											<div class="field"><input type="text" name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_src]" id="sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_src" value="<?php echo esc_url($options["sd_imgst_".$key."_hand_".$i."_src"]); ?>" /><input type="button" name="upload_button" id="upload_ck" class="bymt_btn btn-upload" value="上传" /></div>
 											<div class="description">图片地址</div>
 										</div>
 										<div class="bymt_children">
 											<div class="wlabel">图片描述(alt)</div>
-											<div class="field"><input type="text" name="bymt_options[sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_alt]" value="<?php esc_attr_e($options["sd_imgst_".$key."_hand_".$i."_alt"]); ?>" /></div>
+											<div class="field"><input type="text" name="bymt_options_v2[sd_imgst_<?php echo $key ; ?>_hand_<?php echo $i ; ?>_alt]" value="<?php esc_attr_e($options["sd_imgst_".$key."_hand_".$i."_alt"]); ?>" /></div>
 											<div class="description">图片描述</div>
 										</div>
 										</div>
@@ -502,7 +502,7 @@ error_reporting(0);
 				<li>
 				<div class="wlabel">参数设置</div>
 				<div class="field">
-				<?php foreach ($slides_arr as $key => $value) { ?><label><input type="checkbox" name="bymt_options[sd_config_<?php echo $key; ?>_ck]" class="bymt_checkbox" id="sd_config_<?php echo $key; ?>_ck"<?php checked('on', $options["sd_config_".$key."_ck"]); ?>/><label for="sd_config_<?php echo $key; ?>_ck"></label> <?php echo $value; ?> </label>
+				<?php foreach ($slides_arr as $key => $value) { ?><label><input type="checkbox" name="bymt_options_v2[sd_config_<?php echo $key; ?>_ck]" class="bymt_checkbox" id="sd_config_<?php echo $key; ?>_ck"<?php checked('on', $options["sd_config_".$key."_ck"]); ?>/><label for="sd_config_<?php echo $key; ?>_ck"></label> <?php echo $value; ?> </label>
 				<?php } ?></div>
 				<div class="description">勾选则启用当前位置焦点图，不建议全部开启</div>
 				<?php foreach ($slides_arr as $key => $value) { ?><div class="bymt_children bymt_nodisplay" id="sd_config_<?php echo $key; ?>">
@@ -510,7 +510,7 @@ error_reporting(0);
 				<div class="field">
 				<?php foreach ($string_arr[0] as $titval) { ?>
 				<label><?php echo $string_arr[1][$titval."_tit"]; ?>:
-				<select rel="string" name="bymt_options[sd_config_<?php echo $key; ?>_<?php echo $titval; ?>]" id="<?php echo $titval; ?>" class="slide_select">
+				<select rel="string" name="bymt_options_v2[sd_config_<?php echo $key; ?>_<?php echo $titval; ?>]" id="<?php echo $titval; ?>" class="slide_select">
 				<?php foreach ($string_arr[1][$titval] as $selval) { ?>
 					<option value="<?php echo $selval; ?>"<?php selected($selval, $options["sd_config_".$key."_".$titval]); ?>><?php echo $selval; ?></option>
 				<?php  } ?>
@@ -532,14 +532,14 @@ error_reporting(0);
 							<div class="wlabel">jQuery库选择</div>
 							<div class="field">
 							<?php foreach ($jq_arr as $val) { ?>
-								<label><input type="radio" name="bymt_options[jq]" id="jq_<?php echo $val['name']; ?>" class="bymt_radio <?php if($val['name']=="other"){ echo "cktype_r"; }else{ echo "cktype_l"; } ?>" value="<?php echo $val['url']; ?>"<?php if($options['jq']=="") { checked('self', $val['name']); }else{ checked($val['url'], $options['jq']); } ?>/><label for="jq_<?php echo $val['name']; ?>"></label> <?php echo $val['tit']; ?> </label>
+								<label><input type="radio" name="bymt_options_v2[jq]" id="jq_<?php echo $val['name']; ?>" class="bymt_radio <?php if($val['name']=="other"){ echo "cktype_r"; }else{ echo "cktype_l"; } ?>" value="<?php echo $val['url']; ?>"<?php if($options['jq']=="") { checked('self', $val['name']); }else{ checked($val['url'], $options['jq']); } ?>/><label for="jq_<?php echo $val['name']; ?>"></label> <?php echo $val['tit']; ?> </label>
 								<?php if($val['name']=="upai"){ echo "<br />"; } ?>
 							<?php } ?>
 							</div>
 							<div class="description">选择您认为速度最快的jQuery库，谷歌的服务会被墙，建议国内用户不要勾选谷歌。jQuery库文件比较大，使用cdn可以加快载入速度</div>
 							<div class="bymt_children bymt_nodisplay">
 								<div class="wlabel">自定义JQuery库</div>
-								<div class="field"><input type="text" name="bymt_options[other_jq]" placeholder="http://cdn.myblog.com/jquery/1.8.3/jquery-min.js" value="<?php echo esc_url($options['other_jq']); ?>"/></div>
+								<div class="field"><input type="text" name="bymt_options_v2[other_jq]" placeholder="http://cdn.myblog.com/jquery/1.8.3/jquery-min.js" value="<?php echo esc_url($options['other_jq']); ?>"/></div>
 								<div class="description">输入您自定义的JQuery库地址(最好是压缩的)，例如：http://cdn.myblog.com/jquery/1.8.3/jquery-min.js</div>
 							</div>
 						</li>
@@ -547,17 +547,17 @@ error_reporting(0);
 						<li>
 							<div class="wlabel"><?php echo $val['tit']; ?></div>
 							<div class="field">
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> 关闭 </label>
-								<label><input type="radio" name="bymt_options[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1" <?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 开启 </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_1" class="bymt_radio cktype_l" value="" <?php checked('', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_1"></label> 关闭 </label>
+								<label><input type="radio" name="bymt_options_v2[<?php echo $val['name']; ?>]" id="<?php echo $val['name']; ?>_2" class="bymt_radio cktype_r" value="1" <?php checked('1', $options[$val['name']]); ?>/><label for="<?php echo $val['name']; ?>_2"></label> 开启 </label>
 							</div>
                             <?php if(!empty($val['child_name'])) { ?>
 							<div class="bymt_children bymt_nodisplay">
 								<div class="wlabel"><?php echo $val['child_tit']; ?></div>
 								<div class="field">
 								<?php if($val['child_type']=="number") { ?>
-								<input type="number" class="short" name="bymt_options[<?php echo $val['child_name']; ?>]" value="<?php echo stripslashes($options[$val['child_name']]); ?>"/>
+								<input type="number" class="short" name="bymt_options_v2[<?php echo $val['child_name']; ?>]" value="<?php echo stripslashes($options[$val['child_name']]); ?>"/>
                                 <?php }elseif($val['child_type']=="checkbox") { foreach ($val['child_name'] as $name => $value) { ?>
-								<label><input type="checkbox" name="bymt_options[<?php echo $name; ?>]" class="bymt_inodisplay bymt_checkbox" id="<?php echo $name; ?>" <?php checked('on', $options[$name]); ?>/><label for="<?php echo $name; ?>"></label> <?php echo $value; ?> </label>
+								<label><input type="checkbox" name="bymt_options_v2[<?php echo $name; ?>]" class="bymt_inodisplay bymt_checkbox" id="<?php echo $name; ?>" <?php checked('on', $options[$name]); ?>/><label for="<?php echo $name; ?>"></label> <?php echo $value; ?> </label>
 								<?php } } ?>
 								</div>
 								<div class="description"><?php echo $val['child_desc']; ?></div>
@@ -568,7 +568,7 @@ error_reporting(0);
 								<div class="wlabel"><?php echo $val['child_tit2']; ?></div>
 								<div class="field">
 								<?php if($val['child_type2']=="number") { ?>
-								<input type="number" class="short" name="bymt_options[<?php echo $val['child_name2']; ?>]" value="<?php echo stripslashes($options[$val['child_name2']]); ?>"/>
+								<input type="number" class="short" name="bymt_options_v2[<?php echo $val['child_name2']; ?>]" value="<?php echo stripslashes($options[$val['child_name2']]); ?>"/>
 								<?php } ?>
 								</div>
 								<div class="description"><?php echo $val['child_desc2']; ?></div>

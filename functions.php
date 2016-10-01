@@ -76,13 +76,13 @@ add_action( 'wp_enqueue_scripts', 'bymt_enqueue_scripts' );
 
 //核心函数
 function bymt_c($name){
-    $bymt_c = get_option('bymt_options');
+    $bymt_c = get_option('bymt_options_v2');
 	if(!$name) return false;
 	if(!isset($bymt_c[$name])) return false;
 	return $bymt_c[$name];
 }
 function bymt($name,$e=''){
-    $bymt = get_option('bymt_options');
+    $bymt = get_option('bymt_options_v2');
 	if($e=='e'){
 		esc_attr_e($bymt[$name]);
 	}elseif($e=='u'){
@@ -94,7 +94,7 @@ function bymt($name,$e=''){
 	}
 }
 function bymt_r($name,$val,$e=''){
-    $bymt_r = get_option('bymt_options');
+    $bymt_r = get_option('bymt_options_v2');
     $result = empty($bymt_r[$name]) ? '' : $bymt_r[$name];
 	if($e==='e'){
 		if($result===''){
