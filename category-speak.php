@@ -7,13 +7,12 @@
  * @version 	1.0.5
  */
 
-$options = get_option('bymt_options');
 get_header();
 ?>
     <div id="content_wrap">
     <div id="saybox">
 	<?php
-	$page_ID=$options['ggid'];
+	$page_ID=bymt_option('ggid');
 	$num=max;
 	?>
 	<div class="excerpt">

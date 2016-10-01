@@ -118,8 +118,7 @@ $tmp_c = get_comment($tmp_c->comment_parent);
 		<div class="gravatar">
 			<div class="comment-author vcard">
 			<?php
-				$options = get_option('bymt_options');
-				if($options['avatar_cache'] ){
+				if(bymt_option('avatar_cache') ){
 				$p = 'avatar/';
 				$f = md5(strtolower($comment->comment_author_email));
 				$a = $p . $f .'.jpg';

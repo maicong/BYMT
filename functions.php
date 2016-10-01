@@ -17,7 +17,7 @@ include_once 'includes/widget.php';
 
 
 function bymt_option($key) {
-    $options = get_option('bymt_options');
+    $options = get_option('bymt_options_v1');
     return !empty($options[$key]) ? $options[$key] : '';
 }
 
@@ -639,7 +639,6 @@ if ($depth > get_option('thread_comments_depth')) {echo ' style="margin-left:-15
   <?php $add_below = 'div-comment';?>
   <div class="gravatar">
 	<div class="comment-author vcard">
-	<?php $options = get_option('bymt_options');?>
 <?php
 
     if (bymt_option('avatar_cache')) {

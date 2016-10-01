@@ -7,7 +7,6 @@
  * @version     1.0.5
  */
 
-$options = get_option('bymt_options');
 get_header();
 ?>
 <div id="content_wrap">

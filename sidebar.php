@@ -7,7 +7,6 @@
  * @version     1.0.5
  */
 
-$options = get_option('bymt_options');
 ?>
 <div id="sidebar">
 <div id="closesidebar" title="关闭侧边栏"></div>

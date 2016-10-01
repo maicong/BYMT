@@ -1,8 +1,16 @@
 # 当前更新版本：1.0.5
 
-> WordPress 主题 BYMT v1
-
 ## 写在前面
+
+本项目是 WordPress 主题 BYMT v1 版（以下简称 v1），只适用于 WordPress 平台。
+
+v1 版 是 v1 版 的重构版，v1 首发是在 2013.08.03。
+
+v1 上个版本号是 1.0.3，更新在 2013.09.03。
+
+因为 WordPress 在不断更新版本，本主题没及时跟进，导致安装使用过程会报错，现在 v1 开源了，历史遗留问题我已经修复。
+
+开源并不代表我在使用这款主题，有问题未能及时发现，大家可以提 [issues](https://github.com/maicong/BYMT/issues)，如果你能处理掉问题，欢迎提交 [PR](https://github.com/maicong/BYMT/pulls)，我会跟进修复。
 
 发布页： https://maicong.me/t/85
 

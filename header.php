@@ -11,7 +11,6 @@
 <head>
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type');?>; charset=<?php bloginfo('charset');?>" />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<?php $options = get_option('bymt_options');?>
 <?php include 'includes/title.php';?>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/style.css" media="all"/>
 <!--[if IE 7]><link rel="stylesheet" href="<?php bloginfo('stylesheet_directory');?>/ie7.css" type="text/css" media="screen" /><![endif]-->

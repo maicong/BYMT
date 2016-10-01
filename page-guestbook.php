@@ -11,7 +11,6 @@
 Template Name: Guestbook(留言板)
 ****************/
 
-$options = get_option('bymt_options');
 get_header();
 ?>
     <div id="content_wrap">
@@ -28,8 +27,8 @@ get_header();
 			  $query="SELECT COUNT(comment_ID) AS cnt, comment_author, comment_author_url, comment_author_email FROM (SELECT * FROM $wpdb->comments LEFT OUTER JOIN $wpdb->posts ON ($wpdb->posts.ID=$wpdb->comments.comment_post_ID) WHERE comment_date > date_sub( NOW(), INTERVAL 24 MONTH ) AND user_id='0' AND comment_author_email != $my_email AND post_password='' AND comment_approved='1' AND comment_type='') AS tempcmt GROUP BY comment_author_email ORDER BY cnt DESC LIMIT 36";
 				$wall = $wpdb->get_results($query);
 				$maxNum = $wall[0]->cnt;
-				foreach ($wall as $comment)
-				{
+				$output = "";
+				foreach ($wall as $comment) {
 					$width = round(40 / ( $maxNum / $comment->cnt),2);
 					if( $comment->comment_author_url )
 					$url = $comment->comment_author_url;
@@ -55,9 +54,8 @@ get_header();
 					}
 					$tmp = "<li><a href=\"".$comment->comment_author_url."\" rel=\"external nofollow\">".$avatar."<em>".$comment->comment_author."</em> <strong>+".$comment->cnt."</strong></a></li>";
 					$output .= $tmp;
-				 }
-				$output = "<ul class=\"readers-list\">".$output."</ul>";
-				echo $output ;
+				}
+				echo "<ul class=\"readers-list\">".$output."</ul>";
 			  ?>
 			  <?php endif; ?>
 			  </div>

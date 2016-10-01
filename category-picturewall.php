@@ -7,7 +7,6 @@
  * @version 	1.0.5
  */
 
-$options = get_option('bymt_options');
 get_header();
 ?>
 <div class="margin10">
@@ -33,7 +32,7 @@ get_header();
 				</a>
 				<div class="imgbox-section">
 				<span class="ptime"><?php BYMT_time_diff( $time_type = 'post' ); ?></span>
-				<?php if($options['postinfoviews']): ?><span class="pview"><?php if (function_exists('the_views')): ?><?php the_views(); ?><?php endif; ?></span><?php endif; ?>
+				<?php if(bymt_option('postinfoviews')): ?><span class="pview"><?php if (function_exists('the_views')): ?><?php the_views(); ?><?php endif; ?></span><?php endif; ?>
 				<span class="pcomm"><?php comments_popup_link ('沙发','1条','%条'); ?></span>
 				</div>
 			</div>
