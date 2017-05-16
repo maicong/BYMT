@@ -1,18 +1,17 @@
-##Theme Name
-BYMT
-##Theme URI
-https://maicong.me/bymt
-##Author
-麦葱 (MaiCong)
-##Author URI
-https://maicong.me/
-##Description
-BYMT 正式进入 3.0 时代！距上次更新已经一年多了，感谢仍然坚守 BYMT 主题的用户，感谢大家一直以来的支持与信任！
-##Version
-3.0.0
-##Tags
-white, light, two-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-menu, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, BYMT, maicong.me
-##License
-GNU General Public License version 3.0
-##License URI
-http://www.gnu.org/licenses/gpl-3.0.html
+# 当前更新版本：3.0.0
+
+## 说明
+
+本项目是 WordPress 主题 BYMT v3 版（以下简称 v3），只适用于 WordPress 平台。
+
+发布页： https://maicong.me/t/155
+
+目前为测试版本，代码最后更新时间是 2016年10月2日，麦葱会与近期更新此版本，敬请期待。
+
+## 安装
+
+## 功能
+
+## 协议
+
+MIT
