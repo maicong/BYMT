@@ -1,0 +1,31 @@
+/**
+ * setting.css
+ *
+ * @author      MaiCong <i@maicong.me>
+ * @date        2015-08-12
+ * @package     WordPress
+ * @subpackage  BYMT
+ * @since       BYMT Release 3.0.0
+ */
+ 
+a, a:before, a:after, .form-table { -webkit-transition: all .25s ease-in-out; -moz-transition: all .25s ease-in-out; -ms-transition: all .25s ease-in-out; -o-transition: all .25s ease-in-out; transition: all .25s ease-in-out; }
+a:focus { box-shadow: none; }
+input[type='color'], input[type='date'], input[type='datetime-local'], input[type='datetime'], input[type='email'], input[type='month'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='time'], input[type='url'], input[type='week'], select, textarea { width: 80%; margin-right: 10px; }
+input[type='number'] { width: 6em; margin: 0 5px; }
+textarea { padding: 6px; resize: vertical; }
+.wrap { overflow: hidden; }
+.wp-core-ui .notice.is-dismissible { margin-bottom: 0; }
+.wp-filter { margin-bottom: 10px; }
+.wp-filter .version { position: absolute; top: 0; bottom: 0; right: 15px; height: 20px; margin: auto; color: #fafafa; }
+.metabox-holder .h3 { padding-left: 28px; margin-top: -10px; font-size: 17px; font-weight: normal; }
+.form-table { display: block; height: 0; margin: -2px 0 0 0; opacity: 0; visibility: hidden; overflow: hidden; }
+.form-table.active { display: table; height: auto; opacity: 1; visibility: visible; }
+.form-table th { text-align: center; font-weight: normal; background-color: #f9f9f9; }
+.form-table td { padding: 15px 20px; }
+.form-table td fieldset label { padding-right: 15px; }
+.form-table td fieldset label + input[type='text'] { width: 55%; }
+#wp-link-wrap.has-text-field .wp-link-text-field, #wp-link .link-target { display: none; }
+.resetform { position: relative; top: -52px; left: 95px; }
+@media screen and (max-width: 782px) {
+	.form-table th { padding-left: 20px; padding-bottom: 10px; text-align: left; }
+}
