@@ -9,6 +9,6 @@ WordPress 主题 BYMT 开源啦，感谢大家长久以来的支持。
 
 [BYMT v3](https://github.com/maicong/BYMT/tree/v3)
 
-##协议
+## 协议
 
 MIT
